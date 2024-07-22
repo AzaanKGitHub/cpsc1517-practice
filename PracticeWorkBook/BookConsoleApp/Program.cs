@@ -17,6 +17,10 @@ Console.WriteLine
         "Book Info\n--------------\n" +
         $"Book Title: {book.BookTitle}\n" +
         $"Book Author: {book.BookAuthor}\n" +
-        $"Book Description: {book.BookDescription}\n" 
+        $"Book Description: {book.BookDescription}\n" +
+        $"Page Count: {book.PageCount}\n" +
+        $"Published: {book.BookTitle}\n" +
+        $"Genre: {book.BookTitle}\n" 
+
     ); // using the operator invokes get
 

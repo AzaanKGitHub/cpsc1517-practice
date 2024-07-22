@@ -8,9 +8,18 @@
         private string _bookDescription;
         private int _pageCount;
         private DateOnly _datePublished;
-        private BookGenre _bookGenre; //using the BookGenre enumeration type in the BookGenre.cs file
+        //private BookGenre _bookGenre; //using the BookGenre enumeration type in the BookGenre.cs file
 
-        
+        // Constructors
+        public Book()
+        {
+            _bookTitle = string.Empty;
+            _bookAuthor = string.Empty;
+            _bookDescription = string.Empty;
+            _pageCount = 0;
+            _datePublished = new DateOnly();
+            BookGenre = BookGenre.Adventure; // underlying feild is unnecessary, just use the defined property below
+        }
 
         // Properties
         public string BookTitle
@@ -79,6 +88,30 @@
                 
             }
         }
+
+        public DateOnly Published
+        {
+            get
+            {
+                return _datePublished;
+            }
+        }
+
+        //public BookGenre BookGenre
+        //{
+        //    get
+        //    {
+        //        return _bookGenre;
+        //    }
+
+        //    set
+        //    {
+        //        _bookGenre= value;
+        //    }
+        //}
+        //  Auto-implemented property can be used here since all members in the enum are valid
+        public BookGenre BookGenre { get; set; }
+
         // create book age as a derived property 
 
         // Methods
