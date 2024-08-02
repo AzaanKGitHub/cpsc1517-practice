@@ -1,4 +1,6 @@
-﻿namespace Book.Data
+﻿using Utilities;
+
+namespace Book.Data
 {
     public class Book
     {
@@ -11,6 +13,24 @@
         //private BookGenre _bookGenre; //using the BookGenre enumeration type in the BookGenre.cs file
 
         // Constructors
+
+        /// <summary>
+        /// Greedy Constructor
+        /// Will throw an exception if any of the params are invalid.
+        /// </summary>
+        public Book(string bookTitle, string bookAuthor, string bookDescription, 
+                    int pageCount, DateOnly datePublished)
+        {
+            BookTitle = bookTitle;
+            BookAuthor = bookAuthor;
+            BookDescription = bookDescription;
+            PageCount = pageCount;
+
+        }
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public Book()
         {
             _bookTitle = string.Empty;
@@ -84,8 +104,12 @@
 
             set
             {
-
+                if (!Utilities.Utilities.IsPositive(value))
+                {
+                    throw new ArgumentException("Page count must be a positive number.");
+                }
                 
+                _pageCount = value;
             }
         }
 
@@ -94,6 +118,16 @@
             get
             {
                 return _datePublished;
+            }
+
+            set
+            {
+                if (Utilities.Utilities.IsInTheFuture(value))
+                {
+                    throw new ArgumentException($"Date of birth cannot be in the future.");
+                }
+
+                _datePublished = value;
             }
         }
 
@@ -109,7 +143,10 @@
         //        _bookGenre= value;
         //    }
         //}
+
         //  Auto-implemented property can be used here since all members in the enum are valid
+        /*  defines the properties without explicit backing fields, system automatically generates a private 
+            field to store the value of the property, as well as the getter and setter methods.*/
         public BookGenre BookGenre { get; set; }
 
         // create book age as a derived property 
