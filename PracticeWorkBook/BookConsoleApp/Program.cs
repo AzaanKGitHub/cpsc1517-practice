@@ -6,13 +6,17 @@ Book.Data.Book book;
 
 book = new Book.Data.Book(); // default constuctor for Book class
 
-// Using the set of a property
-book.BookTitle = "The Last Wish"; // assignment invokes set
-book.BookAuthor = "Andrzej Sapkowski";
-book.BookDescription = "\"A story about a witcher named Geralt\"";
-
-// Using the get of property
-Console.WriteLine
+try
+{
+    // Using the set of a property
+    book.BookTitle = "The Last Wish"; // assignment invokes set
+    book.BookAuthor = "Andrzej Sapkowski";
+    book.BookDescription = "\"A story about a witcher named Geralt\"";
+    book.PageCount = 504;
+    book.Published = new DateOnly(2021, 01, 01);
+    book.BookGenre = BookGenre.Mystery;
+    // Using the get of property
+    Console.WriteLine
     (
         "Book Info\n--------------\n" +
         $"Book Title: {book.BookTitle}\n" +
@@ -20,7 +24,14 @@ Console.WriteLine
         $"Book Description: {book.BookDescription}\n" +
         $"Page Count: {book.PageCount}\n" +
         $"Published: {book.BookTitle}\n" +
-        $"Genre: {book.BookTitle}\n" 
+        $"Genre: {book.BookTitle}\n"
 
     ); // using the operator invokes get
-
+}
+catch(Exception e)
+{
+    // prints exception catch to the console
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine ("Error: " + e.Message);
+    Console.ResetColor();
+}

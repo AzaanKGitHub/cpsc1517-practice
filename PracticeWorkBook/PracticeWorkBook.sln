@@ -5,7 +5,9 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookData", "BookData\BookData.csproj", "{714EA400-26E1-40CE-9E04-95BE69ACD1B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookConsoleApp", "BookConsoleApp\BookConsoleApp.csproj", "{45168F09-E6F3-4633-BDC1-71C48959F70A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookConsoleApp", "BookConsoleApp\BookConsoleApp.csproj", "{45168F09-E6F3-4633-BDC1-71C48959F70A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{803FAB42-D64F-4976-9858-A218D8EC4691}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{45168F09-E6F3-4633-BDC1-71C48959F70A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45168F09-E6F3-4633-BDC1-71C48959F70A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45168F09-E6F3-4633-BDC1-71C48959F70A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{803FAB42-D64F-4976-9858-A218D8EC4691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{803FAB42-D64F-4976-9858-A218D8EC4691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{803FAB42-D64F-4976-9858-A218D8EC4691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{803FAB42-D64F-4976-9858-A218D8EC4691}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
