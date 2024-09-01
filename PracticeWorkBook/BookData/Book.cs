@@ -53,7 +53,7 @@ namespace Book.Data
             
             set
             {
-                if (Utilities.Utilities.IsNullEmptyOrWhiteSpace(value)) // checks for Null, Whitespace, or Empty value
+                if (Utils.IsNullEmptyOrWhiteSpace(value)) // checks for Null, Whitespace, or Empty value
                 {
                     // returns error if the statement string.IsNullOrEmpty(value) is true
                     throw new ArgumentNullException("Book title cannot be empty.");
@@ -72,7 +72,7 @@ namespace Book.Data
 
             set
             {
-                if (Utilities.Utilities.IsNullEmptyOrWhiteSpace(value))
+                if (Utils.IsNullEmptyOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException("Book author name cannot be empty.");
                 }
@@ -89,7 +89,7 @@ namespace Book.Data
 
             set
             {
-                if (Utilities.Utilities.IsNullEmptyOrWhiteSpace(value))
+                if (Utils.IsNullEmptyOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException("Book description cannot be empty");
                 }
@@ -107,7 +107,7 @@ namespace Book.Data
             set
             {
                 // checks if the page count is greater than 0
-                if (!Utilities.Utilities.IsPositive(value))
+                if (!Utils.IsPositive(value))
                 {
                     throw new ArgumentException("Page count must be a positive number.");
                 }
@@ -126,7 +126,7 @@ namespace Book.Data
             set
             {
                 // checks if the published date is in the future or not
-                if (Utilities.Utilities.IsInTheFuture(value))
+                if (Utils.IsInTheFuture(value))
                 {
                     throw new ArgumentException($"Published date cannot be in the future.");
                 }
