@@ -8,7 +8,9 @@
         private string _bookDescription;
         private int _pageCount;
         private DateOnly _datePublished;
-        //private BookGenre _bookGenre; //using the BookGenre enumeration type in the BookGenre.cs file
+        //private BookGenre _bookGenre; 
+        /* using the BookGenre enumeration type in the BookGenre.cs file, this field is not needed when using an
+         * auto-implemented property. */
 
         // Constructors
         public Book()
