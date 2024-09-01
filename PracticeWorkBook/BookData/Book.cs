@@ -164,7 +164,7 @@ namespace Book.Data
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{BookTitle},{BookAuthor},{BookDescription},{PageCount},{Published}";
+            return $"{BookTitle},{BookAuthor},{BookDescription},pages: {PageCount},date: {Published}";
         }
     }
 }
