@@ -156,5 +156,15 @@ namespace Book.Data
         // create book age as a derived property 
 
         // Methods
+
+        // override is used here to change the behaviour of the ToString() method
+        /// <summary>
+        /// This method provides the string representation of a Book object
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"{BookTitle},{BookAuthor},{BookDescription},{PageCount},{Published}";
+        }
     }
 }
