@@ -38,7 +38,7 @@ namespace Book.Data
             _bookTitle = string.Empty;
             _bookAuthor = string.Empty;
             _bookDescription = string.Empty;
-            _pageCount = 0;
+            _pageCount = 1;
             _datePublished = new DateOnly();
             BookGenre = BookGenre.Adventure; // underlying feild is unnecessary, just use the defined property below
         }
