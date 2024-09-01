@@ -19,5 +19,14 @@
         public static bool IsInTheFuture(DateOnly value) =>
             value > DateOnly.FromDateTime(DateTime.Now);
 
+        /// <summary>
+        /// Checks if the string value is null, empty, or whitespace.
+        /// Essentially a re-name of the IsNullOrWhiteSpace method.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool IsNullEmptyOrWhiteSpace(string value) =>
+            string.IsNullOrWhiteSpace(value);
+
     }
 }

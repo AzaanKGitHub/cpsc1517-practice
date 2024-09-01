@@ -53,7 +53,7 @@ namespace Book.Data
             
             set
             {
-                if (string.IsNullOrEmpty(value)) // checks for Null, Whitespace, or Empty value
+                if (Utilities.Utilities.IsNullEmptyOrWhiteSpace(value)) // checks for Null, Whitespace, or Empty value
                 {
                     // returns error if the statement string.IsNullOrEmpty(value) is true
                     throw new ArgumentNullException("Book title cannot be empty.");
@@ -72,7 +72,7 @@ namespace Book.Data
 
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (Utilities.Utilities.IsNullEmptyOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException("Book author name cannot be empty.");
                 }
@@ -89,7 +89,7 @@ namespace Book.Data
 
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (Utilities.Utilities.IsNullEmptyOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException("Book description cannot be empty");
                 }
