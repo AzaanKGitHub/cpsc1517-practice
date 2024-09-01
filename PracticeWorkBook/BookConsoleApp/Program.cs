@@ -12,7 +12,7 @@ try
     book.BookTitle = "The Last Wish"; // assignment invokes set
     book.BookAuthor = "Andrzej Sapkowski";
     book.BookDescription = "\"A story about a witcher named Geralt\"";
-    book.PageCount = 504;
+    book.PageCount = -1;
     book.Published = new DateOnly(2021, 01, 01);
     book.BookGenre = BookGenre.Mystery;
     // Using the get of property
@@ -23,8 +23,8 @@ try
         $"Book Author: {book.BookAuthor}\n" +
         $"Book Description: {book.BookDescription}\n" +
         $"Page Count: {book.PageCount}\n" +
-        $"Published: {book.BookTitle}\n" +
-        $"Genre: {book.BookTitle}\n"
+        $"Published: {book.Published}\n" +
+        $"Genre: {book.BookGenre}\n"
 
     ); // using the operator invokes get
 }

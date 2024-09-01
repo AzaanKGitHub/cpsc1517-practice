@@ -106,6 +106,7 @@ namespace Book.Data
 
             set
             {
+                // checks if the page count is greater than 0
                 if (!Utilities.Utilities.IsPositive(value))
                 {
                     throw new ArgumentException("Page count must be a positive number.");
@@ -124,9 +125,10 @@ namespace Book.Data
 
             set
             {
+                // checks if the published date is in the future or not
                 if (Utilities.Utilities.IsInTheFuture(value))
                 {
-                    throw new ArgumentException($"Date of birth cannot be in the future.");
+                    throw new ArgumentException($"Published date cannot be in the future.");
                 }
 
                 _datePublished = value;
