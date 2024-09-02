@@ -19,15 +19,17 @@ namespace Book.Data
         /// <summary>
         /// Greedy Constructor
         /// Will throw an exception if any of the params are invalid.
+        /// The parameters here represent essential data required to create a  valid 'Book' object.
         /// </summary>
         public Book(string bookTitle, string bookAuthor, string bookDescription, 
                     int pageCount, DateOnly datePublished)
         {
+            // parameters are assigned to corresponding Properties of the 'Book' class
             BookTitle = bookTitle;
             BookAuthor = bookAuthor;
             BookDescription = bookDescription;
             PageCount = pageCount;
-
+            Published = datePublished;
         }
 
         /// <summary>
@@ -46,12 +48,12 @@ namespace Book.Data
         // Properties
         public string BookTitle
         {
-            get 
+            get // getter retrives the value from the private Field associated with the given Property (BookTitle).
             { 
                 return _bookTitle; 
             } 
             
-            set
+            private set // setter checks if value is valid 
             {
                 if (Utils.IsNullEmptyOrWhiteSpace(value)) // checks for Null, Whitespace, or Empty value
                 {
@@ -70,7 +72,7 @@ namespace Book.Data
                 return _bookAuthor;
             }
 
-            set
+            private set
             {
                 if (Utils.IsNullEmptyOrWhiteSpace(value))
                 {
@@ -87,7 +89,7 @@ namespace Book.Data
                 return _bookDescription;
             }
 
-            set
+            private set
             {
                 if (Utils.IsNullEmptyOrWhiteSpace(value))
                 {
@@ -104,7 +106,7 @@ namespace Book.Data
                 return _pageCount;
             }
 
-            set
+            private set
             {
                 // checks if the page count is greater than 0
                 if (!Utils.IsPositive(value))
@@ -123,7 +125,7 @@ namespace Book.Data
                 return _datePublished;
             }
 
-            set
+            private set
             {
                 // checks if the published date is in the future or not
                 if (Utils.IsInTheFuture(value))
@@ -134,6 +136,8 @@ namespace Book.Data
                 _datePublished = value;
             }
         }
+
+        // Age property
 
         //public BookGenre BookGenre
         //{
@@ -151,7 +155,7 @@ namespace Book.Data
         //  Auto-implemented property can be used here since all members in the enum are valid
         /*  defines the properties without explicit backing fields, system automatically generates a private 
             field to store the value of the property, as well as the getter and setter methods.*/
-        public BookGenre BookGenre { get; set; }
+        public BookGenre BookGenre { get; private set; }
 
         // create book age as a derived property 
 
