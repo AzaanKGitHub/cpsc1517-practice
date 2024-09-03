@@ -9,12 +9,12 @@ book = new Book.Data.Book(); // default constuctor for Book class
 try
 {
     // Using the set of a property
-    book.BookTitle = "The Last Wish"; // assignment invokes set
-    book.BookAuthor = "Andrzej Sapkowski";
-    book.BookDescription = "\"A story about a witcher named Geralt\"";
-    book.PageCount = -1;
-    book.Published = new DateOnly(2021, 01, 01);
-    book.BookGenre = BookGenre.Mystery;
+    //book.BookTitle = "The Last Wish"; // assignment invokes set
+    //book.BookAuthor = "Andrzej Sapkowski";
+    //book.BookDescription = "\"A story about a witcher named Geralt\"";
+    //book.PageCount = -1;
+    //book.Published = new DateOnly(2021, 01, 01);
+    //book.BookGenre = BookGenre.Mystery;
     // Using the get of property
     Console.WriteLine
     (

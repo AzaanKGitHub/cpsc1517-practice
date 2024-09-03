@@ -22,7 +22,7 @@ namespace Book.Data
         /// The parameters here represent essential data required to create a  valid 'Book' object.
         /// </summary>
         public Book(string bookTitle, string bookAuthor, string bookDescription, 
-                    int pageCount, DateOnly datePublished)
+                    int pageCount, DateOnly datePublished, BookGenre bookGenre)
         {
             // parameters are assigned to corresponding Properties of the 'Book' class
             BookTitle = bookTitle;
@@ -30,6 +30,7 @@ namespace Book.Data
             BookDescription = bookDescription;
             PageCount = pageCount;
             Published = datePublished;
+            BookGenre = bookGenre;
         }
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace Book.Data
                 if (Utils.IsNullEmptyOrWhiteSpace(value)) // checks for Null, Whitespace, or Empty value
                 {
                     // returns error if the statement string.IsNullOrEmpty(value) is true
-                    throw new ArgumentNullException("Book title cannot be empty.");
+                    throw new ArgumentException("Book title cannot be null or empty.");
                 }
                 _bookTitle = value;
 
@@ -76,7 +77,7 @@ namespace Book.Data
             {
                 if (Utils.IsNullEmptyOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException("Book author name cannot be empty.");
+                    throw new ArgumentException("Book author name cannot be null or empty.");
                 }
                 _bookAuthor = value;
             }
@@ -93,7 +94,7 @@ namespace Book.Data
             {
                 if (Utils.IsNullEmptyOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException("Book description cannot be empty");
+                    throw new ArgumentException("Book description cannot be null or empty.");
                 }
                 _bookDescription = value;
             }
@@ -111,7 +112,7 @@ namespace Book.Data
                 // checks if the page count is greater than 0
                 if (!Utils.IsPositive(value))
                 {
-                    throw new ArgumentException("Page count must be a positive number.");
+                    throw new ArgumentException("Page count cannot be 0 or negative.");
                 }
                 
                 _pageCount = value;
@@ -155,7 +156,7 @@ namespace Book.Data
         //  Auto-implemented property can be used here since all members in the enum are valid
         /*  defines the properties without explicit backing fields, system automatically generates a private 
             field to store the value of the property, as well as the getter and setter methods.*/
-        public BookGenre BookGenre { get; private set; }
+        public BookGenre BookGenre { get; set; }
 
         // create book age as a derived property 
 
