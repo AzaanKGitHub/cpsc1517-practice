@@ -158,7 +158,11 @@ namespace Book.Data
             field to store the value of the property, as well as the getter and setter methods.*/
         public BookGenre BookGenre { get; set; }
 
-        // create book age as a derived property 
+        // create book age as a Derived Property 
+        public int BookAge => (DateOnly.FromDateTime(DateTime.Now).DayNumber - Published.DayNumber) / 365;
+
+
+
 
         // Methods
 

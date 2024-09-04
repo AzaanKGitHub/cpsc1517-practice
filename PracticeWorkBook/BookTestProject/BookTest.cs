@@ -15,7 +15,24 @@ namespace BookTestProject
         const int Month = 08;
         const int Day = 28;
         const BookGenre ReadingGenre = BookGenre.Adventure;
+        readonly int BookAge = (DateOnly.FromDateTime(DateTime.Now).DayNumber - new DateOnly(Year, Month, Day).DayNumber) / 365;
 
+
+        // used to quick test BookAge calculation
+        //[Fact]
+        //public void Age_IsCorrect()
+        //{
+        //    BookAge.Should().Be(31);
+        //}
+
+        /// <summary>
+        /// Creates a default book for testing purposes, this is not a test itself
+        /// </summary>
+        /// <returns></returns>
+        public Book.Data.Book CreateTestBook()
+        {
+            return new Book.Data.Book(BookTitle, BookAuthor, BookDescription, PageCount, new DateOnly(Year, Month, Day), ReadingGenre);
+        }
 
 
         /// <summary>
@@ -69,10 +86,24 @@ namespace BookTestProject
                 new DateOnly(year, month, day), bookGenre);
 
             // Act/Assert
+            // This test should throw an ArgumentException with the corresponding error message 
             act.Should().Throw<ArgumentException>().WithMessage(errorMessage);
         }
 
+        [Fact]
+        public void Book_Age_ReturnsCorrectAge()
+        {
+            // Arrange
+            Book.Data.Book book = CreateTestBook(); // Creates a book from the CreateTestBook() at the top for testing
+            int actual;
 
+            // Act
+            actual = book.BookAge;
+
+            // Assert
+            actual = BookAge;
+
+        }
 
 
 
